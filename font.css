@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Futura-Thin";
+  src: url("Font/FUTURTHN.ttf") format("truetype"); /* Ubah "ttf" ke "truetype" untuk format font yang benar */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura-Md-Bt";
+  src: url("Font/futuramediumbt.ttf") format("truetype"); /* Ubah "ttf" ke "truetype" untuk format font yang benar */
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2 {
+  font-family: "Futura-Md-Bt", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+p,
+span,
+form,
+input,
+option,
+select,
+h5,
+a {
+  font-family: "Futura-Thin";
+  font-weight: 800;
+}
+
+form,
+input,
+option,
+select {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1.05rem;
+}

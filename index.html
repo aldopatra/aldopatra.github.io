@@ -1,0 +1,2413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>KAMALA TRIP</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="navbar.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&family=Quicksand:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ====================================== BG LANDING =================================================================================== */
+
+      @media screen and (min-width: 576px) and (max-width: 992px) {
+        .abc {
+          background-size: 50% !important;
+          height: 60vh !important;
+        }
+      }
+
+      @media screen and (max-width: 575px) {
+        .abc {
+          background-size: 48% !important;
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="animasi.css" />
+    <link rel="stylesheet" href="font.css" />
+  </head>
+  <body>
+    <!-- ======================================== MENU ===================================================================================== -->
+    <!-- ======================================== MENU ===================================================================================== -->
+    <nav
+      class="container-fluid row p-1 mx-auto navigasi"
+      style="position: relative; height: 10vh; background-color: #ffffff !important; z-index: 3000 !important;"
+      id="navbar"
+    >
+      <div
+        class="col-6 col-md-3 mx-auto row p-2"
+        style="position: relative; height: 100%; cursor: pointer"
+      >
+        <img
+          src="img/supergraph4.png"
+          alt=""
+          class="col-3 col-md-3 col-lg-2 img-fluid"
+          style="object-fit: contain; height: 100% !important"
+        />
+        <h4
+          class="col-6 col-md-4 my-auto"
+          style="
+            font-weight: 600;
+            color: #000000;
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.5) !important;
+            letter-spacing: 2.5px;
+            font-family: Futura-Md-Bt;
+          "
+        >
+          KAMALA
+        </h4>
+      </div>
+
+      <div class="col-md-4 d-none d-md-block"></div>
+      <div
+        onclick="klikBurger()"
+        class="col-6 mx-auto my-auto d-md-none"
+        style="
+          position: relative;
+          height: 100% !important;
+          display: flex;
+          align-items: center;
+          justify-content: end;
+        "
+      >
+        <img
+          src="img/hamburger-menu-5.svg"
+          class="img-fluid my-auto hamburger"
+          style="
+            height: 50% !important;
+            width: auto !important;
+            object-fit: contain !important;
+          "
+          alt=""
+        />
+      </div>
+
+      <div
+        class="col-3 col-md-4 row d-none d-md-block mx-auto my-auto d-flex justify-content-end align-items-end"
+      >
+        <a class="col-4 mx-auto my-auto" href="#">Beranda</a>
+        <a class="col-4 mx-auto my-auto" href="#">Tentang</a>
+        <a class="col-4 mx-auto my-auto" href="#">Booking</a>
+        <a class="col-4 mx-auto my-auto" href="#">Kontak</a>
+      </div>
+    </nav>
+
+    <div
+      style="
+        position: fixed;
+        background-color: #c49a6c8c;
+        backdrop-filter: blur(10px);
+        z-index: 2000;
+        height: 60vh;
+        right: 100% !important;
+      "
+      class="navHp container row mx-auto d-md-none"
+    >
+      <a
+        href="#"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: Futura-Md-Bt;
+        "
+        class="col-12"
+        >Beranda</a
+      >
+      <a
+        href="#"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center; 
+          font-family: Futura-Md-Bt;
+        "
+        class="col-12"
+        >Tentang</a
+      >
+      <a
+        href="#"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: Futura-Md-Bt;
+        "
+        class="col-12"
+        >Booking</a
+      >
+      <a
+        href="#"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: Futura-Md-Bt;
+        "
+        class="col-12"
+        >Kontak</a
+      >
+    </div>
+
+    <script>
+      var hamburger = document.querySelector(".hamburger");
+      var navHp = document.querySelector(".navHp");
+      var navigasi = document.querySelector(".navigasi")
+      var navbar = document.getElementById("navbar");
+
+      function klikBurger() {
+        if (navHp.style.right === "0%") {
+          // Jika navHp sudah terbuka, maka tutup kembali
+          navHp.style.right = "100%";
+          hamburger.style.width = "auto"; // Mengembalikan lebar hamburger ke normal
+          hamburger.src = "img/hamburger-menu-5.svg"; // Mengembalikan gambar hamburger ke aslinya
+        } else {
+          // Jika navHp belum terbuka, maka buka
+          navHp.style.right = "0%";
+          hamburger.style.width = "10%";
+          hamburger.src = "img/44285.svg";
+        }
+      }
+
+      var scrollTrigger = 1000
+      
+      window.addEventListener("scroll", function() {
+        // Mendapatkan posisi scroll vertikal
+        var scrollY = window.scrollY || document.documentElement.scrollTop;
+
+        // Mengubah kelas navbar jika posisi scroll mencapai scrollTrigger
+        if (scrollY >= scrollTrigger) {
+            navbar.classList.add("fixed");
+            navHp.classList.add("fixed2");
+
+        } else {
+            navbar.classList.remove("fixed");
+            navHp.classList.remove("fixed2");
+        }
+      });
+
+
+
+
+    </script>
+
+    <!-- ======================================== LANDING ================================================================================== -->
+    <!-- ======================================== LANDING ================================================================================== -->
+
+    <section
+      class="container-fluid row d-flex abc overflow-hidden"
+      style="
+        min-height: 95vh !important;
+        height: fit-content !important;
+        background-image: url(img/KAMALA-HP-_FCF9D1.webp);
+        background-size: 20%;
+        background-position: right bottom;
+        background-repeat: no-repeat !important;
+
+        overflow: hidden;
+        position: relative;
+      "
+    >
+      <div class="col-12 col-md-6 row mx-md-1 mx-lg-auto d-flex p-3">
+        <div class="col-12 mt-1 mt-md-3 mt-lg-5">
+          <h1
+            class="align-items-center align-items-md-start align-items-lg-center mt-md-5 d-flex"
+            style="
+              height: fit-content;
+              font-weight: 900;
+              color: #c49a6c;
+              text-shadow: 1px 1px rgba(0, 0, 0, 0.5) !important;
+              letter-spacing: 2.5px;
+            "
+          >
+            PERJALANAN NYAMAN BERSAMA MINIBUS KAMI
+          </h1>
+          <p
+            class="mt-0 align-self-md-start mb-0"
+            style="margin-top: 0; margin-bottom: 0; font-family: Futura-Thin"
+          >
+            Sewa Hiace Jakarta.
+          </p>
+
+          <form
+            class="col-12 col-md-10 col-lg-12 row d-flex d-lg-flex mt-5 rounded shadow-lg p-2"
+            action=""
+            style="background-color: #ffffff"
+          >
+            <h5
+              class="col-12"
+              style="
+                font-weight: 900 !important;
+                margin-bottom: 5% !important;
+                font-family: Futura-Md-Bt;
+              "
+            >
+              Hitung Kalkulasi Trip Kamu Disini!
+            </h5>
+
+            <div class="col-12 col-md-12 col-lg-4">
+              <label class="col-12" for="unit">Pilih Unit</label>
+              <select class="col-12" name="Unit" id="unit">
+                <option value="hiaceCommuter">Hiace Commuter</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-12 col-lg-4">
+              <label class="col-12" for="tujuan">Tujuan</label>
+              <select class="col-12 my-auto" name="Tujuan" id="tujuan">
+                <option value="JABODETABEK">JABODETABEK</option>
+                <option value="JAWABARAT">JAWA BARAT</option>
+                <option value="LUARJAWABARAT">LUAR JAWA BARAT</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-12 col-lg-4">
+              <label for="tanggalBerangkat" class="my-auto col-12"
+                >Tanggal Berangkat</label
+              >
+              <input id="tanggalBerangkat" class="my-auto col-12" type="date" />
+            </div>
+
+            <div class="col-12 col-md-12 col-lg-4">
+              <label for="tanggalAkhir" class="my-auto col-12"
+                >Tanggal Akhir</label
+              >
+              <input id="tanggalAkhir" class="my-auto col-12" type="date" />
+            </div>
+
+            <div class="col-lg-8 d-none d-md-flex"></div>
+
+            <div
+              class="col-11 mx-auto mx-md-auto col-md-7 col-lg-5"
+              style="cursor: pointer !important"
+            >
+              <label for="searchButton" class="my-auto col-12"></label>
+              <p
+                style="
+                  border: solid 2px #fcf9d1;
+                  margin-left: 10%;
+                  border-radius: 20% !important;
+                "
+                class="searchButton my-auto col-12 rounded shadow-lg"
+              >
+                <img
+                  src="img/clipart4254271.png"
+                  alt=""
+                  class="img-fluid col-3 p-1"
+                  style="width: 20%; height: auto; margin-left: 5%"
+                />
+                <span
+                  class="col-9 mx-auto"
+                  style="
+                    margin-left: 5%;
+                    font-size: 1rem;
+                    font-family: Futura-Md-Bt !important;
+                    font-weight: 900 !important;
+                    text-align: center;
+                  "
+                >
+                  Lihat Ketersediaan
+                </span>
+              </p>
+            </div>
+
+            <!-- <div
+              class="col-10 mx-auto my-auto col-md-7 col-lg-5"
+              style="
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+              "
+            >
+              <label for="submitForm" class="col-12"> </label>
+              <button
+                id="submitForm"
+                class="row col-12 mx-auto border rounded"
+                style="
+                  background-color: #c49a6c;
+                  font-weight: 900;
+                  position: relative;
+                "
+              >
+                <img
+                  src="img/clipart4254271.png"
+                  alt=""
+                  class="img-fluid col-3"
+                  style="width: 25%; height: auto"
+                />
+                <p class="col-9" style="font-weight: 900; position: relative">
+                  Cek Ketersediaan!
+                </p>
+              </button>
+            </div> -->
+          </form>
+        </div>
+      </div>
+
+      <div class="col-4 d-none d-lg-flex"></div>
+
+      <img
+        src="img/HIACE UNIT.png"
+        style="
+          position: absolute;
+          max-height: 60%;
+          width: auto;
+          bottom: 0%;
+          right: 0%;
+          z-index: -1;
+          opacity: 90%;
+        "
+        alt="Parallax Image"
+        class="parallax-img"
+        alt=""
+      />
+
+      <script>
+        var parallaxImg = document.querySelector(".parallax-img");
+
+        window.addEventListener("scroll", function () {
+          var scrollPosition = window.pageYOffset;
+          var translateValue = scrollPosition * 0.4; // Sesuaikan kecepatan paralaks
+          var translateValue1 = scrollPosition * 0.01; // Sesuaikan kecepatan paralaks
+
+          parallaxImg.style.transform =
+            "translate3d(-" + translateValue + "px, 0, 0)";
+        });
+
+        console.log(window.pageYOffset);
+      </script>
+    </section>
+
+    <!-- ======================================== SECTION2 ================================================================================== -->
+    <!-- ======================================== SECTION2 ================================================================================== -->
+    <section
+      style="
+        height: 90vh;
+        /* background-color: red; */
+        position: relative;
+        overflow: hidden;
+
+        /* background-image: url(img/alam\ mlg.webp);
+        background-size: cover;
+        background-repeat: no-repeat; */
+        z-index: -2;
+      "
+      class="container-fluid row mt-3 mx-auto p-5 pembungkusSCT2 rounded shadow-lg"
+    >
+      <!-- konten 1 -->
+      <div
+        style="
+          position: absolute;
+          width: 17%;
+          height: 35%;
+          background-color: white;
+          padding: 2% 3%;
+          top: calc(50% - 17.5%); /* setengah dari tinggi elemen */
+          left: calc(50% - 10%); /* setengah dari lebar elemen */
+          transform: rotate(-30deg);
+          opacity: 100%;
+        "
+        class="d-flex border shadow-lg rounded-3 resolusiSection2 kontenSCT2"
+      >
+        <img
+          src="img/Gallery Trip/IMG-20230802-WA0006.jpg"
+          style="width: 100%; height: auto; object-fit: cover"
+          class="col-12 mx-auto border rounded"
+          alt=""
+        />
+      </div>
+
+      <!--konten 2  -->
+      <div
+        style="
+          position: absolute;
+          width: 17%;
+          height: 35%;
+          background-color: white;
+          padding: 2% 3%;
+          top: calc(50% - 17.5%); /* setengah dari tinggi elemen */
+          right: calc(50% - 10%); /* setengah dari lebar elemen */
+          transform: rotate(30deg);
+          opacity: 100%;
+        "
+        class="d-flex border shadow-lg rounded-3 resolusiSection2 kontenSCT3"
+      >
+        <img
+          src="img/Gallery Trip/IMG-20230807-WA0006.jpg"
+          style="width: 100%; height: auto; object-fit: cover"
+          class="col-12 mx-auto border rounded"
+          alt=""
+        />
+      </div>
+
+      <!-- Konten 3 -->
+      <div
+        style="
+          position: absolute;
+          width: 17%;
+          height: 35%;
+          background-color: white;
+          padding: 2% 3%;
+          bottom: calc(50% - 17.5%); /* setengah dari tinggi elemen */
+          right: calc(50% - 10%); /* setengah dari lebar elemen */
+          transform: rotate(-30deg);
+          opacity: 100%;
+        "
+        class="d-flex border shadow-lg rounded-3 resolusiSection2 kontenSCT4"
+      >
+        <img
+          src="img/Gallery Trip/IMG-20230821-WA0005.jpg"
+          style="width: 100%; height: auto; object-fit: cover"
+          class="col-12 mx-auto border rounded"
+          alt=""
+        />
+      </div>
+
+      <!--konten 4  -->
+      <div
+        style="
+          position: absolute;
+          width: 17%;
+          height: 35%;
+          background-color: white;
+          padding: 2% 3%;
+          bottom: calc(50% - 17.5%); /* setengah dari tinggi elemen */
+          left: calc(50% - 10%); /* setengah dari lebar elemen */
+          transform: rotate(30deg);
+          opacity: 100%;
+        "
+        class="d-flex border shadow-lg rounded-3 resolusiSection2 kontenSCT5"
+      >
+        <img
+          src="img/Gallery Trip/IMG-20230821-WA0007.jpg"
+          style="width: 100%; height: auto; object-fit: cover"
+          class="col-12 mx-auto border rounded"
+          alt=""
+        />
+      </div>
+
+      <!-- Konten 5 -->
+
+      <div
+        style="
+          position: absolute;
+          width: 17%;
+          height: 35%;
+          background-color: white;
+          padding: 2% 3%;
+          bottom: calc(50% - 17.5%); /* setengah dari tinggi elemen */
+          left: calc(50% - 10%); /* setengah dari lebar elemen */
+          transform: rotate(30deg);
+          opacity: 100%;
+        "
+        class="d-flex border shadow-lg rounded-3 resolusiSection2 kontenSCT6"
+      >
+        <img
+          src="img/Gallery Trip/IMG-20230821-WA0022.jpg"
+          style="width: 100%; height: auto; object-fit: cover"
+          class="col-12 mx-auto border rounded"
+          alt=""
+        />
+      </div>
+
+      <!-- Konten 6 -->
+
+      <div
+        style="
+          position: absolute;
+          width: 17%;
+          height: 35%;
+          background-color: white;
+          padding: 2% 3%;
+          bottom: calc(50% - 17.5%); /* setengah dari tinggi elemen */
+          right: calc(50% - 10%); /* setengah dari lebar elemen */
+          transform: rotate(15deg);
+          opacity: 100%;
+        "
+        class="d-flex border shadow-lg rounded-3 resolusiSection2 kontenSCT7"
+      >
+        <img
+          src="img/Gallery Trip/IMG-20230817-WA0016.jpg"
+          style="width: 100%; height: auto; object-fit: cover"
+          class="col-12 mx-auto border rounded"
+          alt=""
+        />
+      </div>
+
+      <!-- Konten 7 -->
+
+      <div
+        style="
+          position: absolute;
+          width: 17%;
+          height: 35%;
+          background-color: white;
+          padding: 2% 3%;
+          top: calc(50% - 17.5%); /* setengah dari tinggi elemen */
+          left: calc(50% - 10%); /* setengah dari lebar elemen */
+          transform: rotate(30deg);
+          z-index: -1;
+          opacity: 100%;
+        "
+        class="d-flex border shadow-lg rounded-3 resolusiSection2 kontenSCT8"
+      >
+        <img
+          src="img/Gallery Trip/IMG-20230821-WA0004.jpg"
+          style="width: 100%; height: auto; object-fit: cover"
+          class="col-12 mx-auto border rounded"
+          alt=""
+        />
+      </div>
+
+      <!--konten 8  -->
+      <div
+        style="
+          position: absolute;
+          width: 17%;
+          height: 35%;
+          background-color: white;
+          padding: 2% 3%;
+          bottom: calc(50% - 17.5%); /* setengah dari tinggi elemen */
+          left: calc(50% - 10%); /* setengah dari lebar elemen */
+          transform: rotate(-30deg);
+          z-index: -1;
+          opacity: 100%;
+        "
+        class="d-flex border shadow-lg rounded-3 resolusiSection2 kontenSCT9"
+      >
+        <img
+          src="img/DEE6247.jpeg"
+          style="width: 100%; height: auto; object-fit: cover"
+          class="col-12 mx-auto border rounded"
+          alt=""
+        />
+      </div>
+
+      <!--konten 9  -->
+      <div
+        style="
+          position: absolute;
+          width: 17%;
+          height: 35%;
+          background-color: white;
+          padding: 2% 3%;
+          top: calc(50% - 17.5%); /* setengah dari tinggi elemen */
+          right: calc(50% - 10%); /* setengah dari lebar elemen */
+          transform: rotate(-30deg);
+          z-index: -1;
+          opacity: 100%;
+        "
+        class="d-flex border shadow-lg rounded-3 resolusiSection2 kontenSCT10"
+      >
+        <img
+          src="img/WhatsApp Image 2023-07-08 at 12.48.29 PM.jpeg"
+          style="width: 100%; height: auto; object-fit: cover"
+          class="col-12 mx-auto border rounded"
+          alt=""
+        />
+      </div>
+
+      <!-- Konten10 -->
+      <div
+        style="
+          position: absolute;
+          width: 17%;
+          height: 35%;
+          background-color: white;
+          padding: 2% 3%;
+          bottom: calc(50% - 17.5%); /* setengah dari tinggi elemen */
+          right: calc(50% - 10%); /* setengah dari lebar elemen */
+          transform: rotate(30deg);
+          z-index: -1;
+          opacity: 100%;
+        "
+        class="d-flex border shadow-lg rounded-3 resolusiSection2 kontenSCT11"
+      >
+        <img
+          src="img/WhatsApp Image 2023-07-08 at 12.48.08 PM.jpeg"
+          style="width: 100%; height: auto; object-fit: cover"
+          class="col-12 mx-auto border rounded"
+          alt=""
+        />
+      </div>
+
+      <!-- TEKS -->
+      <!-- <div
+        class="col-12 col-lg-6 mx-auto row p-3 my-auto teksSCT rounded shadow-lg"
+        style="
+          z-index: 30;
+          text-shadow: 50%;
+          transform: translateX(-200%);
+          /* border-color: #fcf9d1 !important; */
+          backdrop-filter: blur(50px);
+        "
+      >
+        <h2 class="col-12" style="text-align: center">
+          100+ client telah memilih Kamala sebagai partner travelling.
+        </h2>
+        <div
+          class="mx-auto col-6"
+          style="background-color: #c49a6c; cursor: pointer !important"
+        >
+          <p style="text-align: center">Pesan Sekarang!</p>
+        </div>
+      </div> -->
+
+      <!-- Supergraph -->
+
+      <div
+        class="supergraph3"
+        style="height: auto; width: 15%; position: absolute; left: 0%; top: 5%"
+      >
+        <img src="img/supergraph3.png" class="img-fluid" alt="" />
+        <p class="buatConsole"></p>
+        <p class="buatConsole2"></p>
+      </div>
+
+      <script>
+        var pembungkusSCT2 = document.querySelector(".pembungkusSCT2");
+        var kontenSCT2 = document.querySelector(".kontenSCT2");
+        var kontenSCT3 = document.querySelector(".kontenSCT3");
+        var kontenSCT4 = document.querySelector(".kontenSCT4");
+        var kontenSCT5 = document.querySelector(".kontenSCT5");
+        var kontenSCT6 = document.querySelector(".kontenSCT6");
+        var kontenSCT7 = document.querySelector(".kontenSCT7");
+        var kontenSCT8 = document.querySelector(".kontenSCT8");
+        var kontenSCT9 = document.querySelector(".kontenSCT9");
+        var kontenSCT10 = document.querySelector(".kontenSCT10");
+        var kontenSCT11 = document.querySelector(".kontenSCT11");
+        var buatConsole = document.querySelector(".buatConsole");
+        var buatConsole2 = document.querySelector(".buatConsole2");
+
+        var teksSCT = document.querySelector(".teksSCT");
+
+        function pindah() {
+          var tinggiLayar = window.innerHeight;
+          var lebarLayar = window.innerWidth;
+          var triggerPosition = getTriggerPosition();
+
+          //   buatConsole.innerText = tinggiLayar;
+          //   buatConsole2.innerText = lebarLayar;
+
+          if (tinggiLayar > 550 && lebarLayar > 760) {
+            kontenSCT2.style.top = "50%";
+            kontenSCT2.style.left = "50%";
+            kontenSCT2.style.transform = "rotate(15deg)";
+
+            kontenSCT3.style.top = "50%";
+            kontenSCT3.style.left = "unset";
+            kontenSCT3.style.right = "50%";
+            kontenSCT3.style.transform = "rotate(-15deg)";
+
+            kontenSCT4.style.bottom = "50%";
+            kontenSCT4.style.right = "50%";
+            kontenSCT4.style.transform = "rotate(15deg)";
+
+            kontenSCT5.style.bottom = "50%";
+            kontenSCT5.style.left = "50%";
+            kontenSCT5.style.transform = "rotate(-15deg)";
+
+            kontenSCT6.style.bottom = "35%";
+            kontenSCT6.style.left = "20%";
+            kontenSCT6.style.transform = "rotate(15deg)";
+
+            kontenSCT7.style.bottom = "35%";
+            kontenSCT7.style.right = "20%";
+            kontenSCT7.style.transform = "rotate(-30deg)";
+
+            kontenSCT8.style.top = "50%";
+            kontenSCT8.style.left = "70%";
+            kontenSCT8.style.transform = "rotate(-15deg)";
+
+            kontenSCT9.style.bottom = "50%";
+            kontenSCT9.style.left = "70%";
+            kontenSCT9.style.transform = "rotate(15deg)";
+
+            kontenSCT10.style.top = "50%";
+            kontenSCT10.style.left = "unset";
+            kontenSCT10.style.right = "70%";
+            kontenSCT10.style.transform = "rotate(15deg)";
+
+            kontenSCT11.style.bottom = "50%";
+            kontenSCT11.style.right = "70%";
+            kontenSCT11.style.transform = "rotate(-15deg)";
+          } else {
+            kontenSCT2.style.top = "50%";
+            kontenSCT2.style.left = "50%";
+            kontenSCT2.style.transform = "rotate(15deg)";
+            kontenSCT2.style.opacity = "0%";
+
+            kontenSCT3.style.top = "50%";
+            kontenSCT3.style.left = "unset";
+            kontenSCT3.style.right = "50%";
+            kontenSCT3.style.transform = "rotate(-15deg)";
+            kontenSCT3.style.opacity = "0%";
+
+            kontenSCT4.style.bottom = "50%";
+            kontenSCT4.style.right = "10%";
+            kontenSCT4.style.transform = "rotate(0deg)";
+
+            kontenSCT5.style.bottom = "50%";
+            kontenSCT5.style.left = "10%";
+            kontenSCT5.style.transform = "rotate(0deg)";
+
+            kontenSCT6.style.bottom = "25%";
+            kontenSCT6.style.left = "10%";
+            kontenSCT6.style.transform = "rotate(0deg)";
+
+            kontenSCT7.style.bottom = "25%";
+            kontenSCT7.style.right = "10%";
+            kontenSCT7.style.transform = "rotate(0deg)";
+
+            kontenSCT8.style.top = "0%";
+            kontenSCT8.style.left = "10%";
+            kontenSCT8.style.transform = "rotate(0deg)";
+
+            kontenSCT9.style.bottom = "0%";
+            kontenSCT9.style.left = "10%";
+            kontenSCT9.style.transform = "rotate(0deg)";
+
+            kontenSCT10.style.top = "0%";
+            kontenSCT10.style.left = "unset";
+            kontenSCT10.style.right = "10%";
+            kontenSCT10.style.transform = "rotate(0deg)";
+
+            kontenSCT11.style.bottom = "0%";
+            kontenSCT11.style.right = "10%";
+            kontenSCT11.style.transform = "rotate(0deg)";
+          }
+        }
+
+        function pindahA() {
+          kontenSCT2.style.top = "calc(50% - 17.5%)";
+          kontenSCT2.style.left = "calc(50% - 10%)";
+          kontenSCT2.style.transform = "rotate(-30deg)";
+          kontenSCT2.style.opacity = "100%";
+
+          kontenSCT3.style.top = "calc(50% - 17.5%)";
+          kontenSCT3.style.right = "calc(50% - 10%)";
+          kontenSCT3.style.transform = "rotate(30deg)";
+          kontenSCT3.style.opacity = "100%";
+
+          kontenSCT4.style.bottom = "calc(50% - 17.5%)";
+          kontenSCT4.style.right = "calc(50% - 10%)";
+          kontenSCT4.style.transform = "rotate(-30deg)";
+          kontenSCT4.style.opacity = "100%";
+
+          kontenSCT5.style.bottom = "calc(50% - 17.5%)";
+          kontenSCT5.style.transform = "rotate(30deg)";
+          kontenSCT5.style.opacity = "100%";
+
+          kontenSCT6.style.bottom = "calc(50% - 17.5%)";
+          kontenSCT6.style.left = "calc(50% - 10%)";
+          kontenSCT6.style.transform = "rotate(30deg)";
+          kontenSCT6.style.opacity = "100%";
+
+          kontenSCT7.style.bottom = "calc(50% - 17.5%)";
+          kontenSCT7.style.right = "calc(50% - 10%)";
+          kontenSCT7.style.transform = "rotate(15deg)";
+          kontenSCT7.style.opacity = "100%";
+
+          kontenSCT8.style.top = "calc(50% - 17.5%)";
+          kontenSCT8.style.left = "calc(50% - 10%)";
+          kontenSCT8.style.transform = "rotate(30deg)";
+          kontenSCT8.style.opacity = "100%";
+
+          kontenSCT9.style.bottom = "calc(50% - 17.5%)";
+          kontenSCT9.style.left = "calc(50% - 10%)";
+          kontenSCT9.style.transform = "rotate(-30deg)";
+          kontenSCT9.style.opacity = "100%";
+
+          kontenSCT10.style.top = "calc(50% - 17.5%)";
+          kontenSCT10.style.right = "calc(50% - 10%)";
+          kontenSCT10.style.transform = "rotate(-30deg)";
+          kontenSCT10.style.opacity = "100%";
+
+          kontenSCT11.style.bottom = "calc(50% - 17.5%)";
+          kontenSCT11.style.right = "calc(50% - 10%)";
+          kontenSCT11.style.transform = "rotate(30deg)";
+          kontenSCT11.style.opacity = "100%";
+        }
+
+        // function pindah2() {
+        //   kontenSCT5.style.bottom = "5%";
+        //   kontenSCT5.style.left = "5%";
+        //   kontenSCT5.classList.remove = ".kontenSCT5";
+        //   kontenSCT5.classList.add = ".kontenSCT5Hover";
+        // }
+
+        function getElementPosition(element) {
+          var rect = element.getBoundingClientRect();
+          return rect.top + window.scrollY;
+        }
+
+        pembungkusSCT2.addEventListener("focus", pindah);
+        // Fungsi untuk memeriksa apakah elemen dalam viewport
+        function isElementInViewport(element) {
+          var rect = element.getBoundingClientRect();
+          return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <=
+              (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <=
+              (window.innerWidth || document.documentElement.clientWidth)
+          );
+        }
+
+        // Fungsi untuk menangani pergerakan elemen saat dalam viewport
+
+        function handleScroll() {
+          var posisiElemen = getElementPosition(pembungkusSCT2);
+          var elemenTinggi = kontenSCT2.clientHeight;
+          var viewportTinggi = window.innerHeight;
+          var lebarLayar = window.innerWidth;
+          var triggerPosition = posisiElemen + elemenTinggi * 1.7;
+          var triggerPositionMobile = posisiElemen + elemenTinggi * 2.9;
+
+          if (
+            window.scrollY >= triggerPosition - viewportTinggi &&
+            lebarLayar >= 1270
+          ) {
+            pindah();
+            console.log(viewportTinggi);
+          } else if (
+            window.scrollY >= triggerPositionMobile - viewportTinggi &&
+            lebarLayar <= 1270
+          ) {
+            pindah();
+          }
+
+          if (window.scrollY <= triggerPosition - viewportTinggi) {
+            pindahA();
+            console.log(viewportTinggi);
+          }
+        }
+
+        function getTriggerPosition() {
+          var elemenTinggi = kontenSCT2.clientHeight;
+          return window.innerHeight * 2 - elemenTinggi / 1.7;
+        }
+
+        // Tambahkan event listener scroll untuk memanggil handleScroll saat pengguna menggulir
+        window.addEventListener("scroll", handleScroll);
+      </script>
+    </section>
+
+    <!-- ======================================== SECTION6 ================================================================================== -->
+    <!-- ======================================== SECTION6 ================================================================================== -->
+
+    <section
+      class="container-fluid mx-auto border rounded shadow-lg mt-3 row d-flex align-items-center justify-content-center"
+      style="height: 85vh; position: relative"
+    >
+      <video
+        src="img/Video/142199 (1080p).mp4"
+        muted
+        autoplay
+        loop
+        style="
+          position: absolute !important;
+          height: 95% !important;
+          width: 100% !important;
+          object-fit: cover !important;
+          z-index: -400;
+          left: 0% !important;
+        "
+      ></video>
+
+      <div
+        class="p-4 col-12 col-lg-5 rounded fontWA shadow-lg"
+        style="
+          background-color: #fcf9d1;
+          z-index: 200;
+          position: relative;
+          text-align: end;
+        "
+      >
+        <h1 style="font-weight: 900 !important; width: 100% !important">
+          Mau Ke
+          <span style="font-family: sans-serif" class="spanHeadline">____</span
+          ><br />
+          Sewa Minibus Kamala!
+        </h1>
+
+        <h1
+          style="
+            position: absolute;
+            top: -7%;
+            left: 5%;
+            font-weight: 900 !important;
+            font-family: Arial, Helvetica, sans-serif;
+          "
+        >
+          "
+        </h1>
+
+        <img
+          src="img/supergraph4.png"
+          style="
+            height: auto;
+            width: 8%;
+            object-fit: cover;
+            position: absolute;
+            z-index: 500;
+            top: -35%;
+            right: 0%;
+          "
+          alt=""
+        />
+      </div>
+      <!-- GAMBARWA1-->
+      <div
+        style="
+          position: absolute;
+          height: 40%;
+          width: 15%;
+          background-color: white;
+
+          right: 35%;
+          transform: rotate(8deg);
+          top: 12.5%;
+          z-index: -43;
+        "
+        class="border rounded shadow-lg p-2 gambarWA1 mx-auto"
+      >
+        <img
+          src="img/Section3/interior hiace.jpg"
+          style="height: 80%; object-fit: cover"
+          class="img-fluid rounded"
+          alt=""
+        />
+      </div>
+      <!-- GAMBARWA2 -->
+      <div
+        style="
+          position: absolute;
+          height: 40%;
+          width: 15%;
+          background-color: white;
+          right: 25%;
+          transform: rotate(15deg) scale(0.8);
+          top: 20.5%;
+          z-index: -42;
+        "
+        class="border rounded shadow-lg p-2 gambarWA2 mx-auto"
+      >
+        <img
+          src="img/Section3/karaokemachines-2048px-7704.webp"
+          style="height: 80%; object-fit: cover"
+          class="img-fluid rounded"
+          alt=""
+        />
+      </div>
+
+      <!-- GAMBARWA3 -->
+      <div
+        style="
+          position: absolute;
+          height: 40%;
+          width: 15%;
+          background-color: white;
+          right: 19%;
+          transform: rotate(18deg) scale(0.6);
+          top: 25.5%;
+          z-index: -41;
+        "
+        class="border rounded shadow-lg p-2 gambarWA3 mx-auto"
+      >
+        <img
+          src="img/Section3/tv.jpg"
+          style="height: 80%; object-fit: cover"
+          class="img-fluid rounded"
+          alt=""
+        />
+      </div>
+
+      <!-- GAMBARWA4 -->
+      <div
+        style="
+          position: absolute;
+          height: 40%;
+          width: 15%;
+          background-color: white;
+          right: 15%;
+          transform: rotate(18deg) scale(0.4);
+          top: 30.5%;
+          z-index: -40;
+        "
+        class="border rounded shadow-lg p-2 gambarWA4 mx-auto"
+      >
+        <img
+          src="img/Section3/charging-port.jpg"
+          style="height: 80%; object-fit: cover"
+          class="img-fluid rounded"
+          alt=""
+        />
+      </div>
+
+      <!-- GAMBARWA5-->
+      <div
+        style="
+          position: absolute;
+          height: 40%;
+          width: 15%;
+          background-color: white;
+          right: 45%;
+          transform: rotate(-90deg) scale(0.6);
+          top: 25.5%;
+          z-index: -44;
+        "
+        class="border rounded shadow-lg p-2 gambarWA5 mx-auto"
+      >
+        <img
+          src="img/Section3/bluetooth.jpeg"
+          style="height: 80%; object-fit: cover"
+          class="img-fluid rounded"
+          alt=""
+        />
+      </div>
+
+      <div
+        class="p-4 col-12 col-lg-5 rounded fontWA"
+        style="
+          background-color: #fcf9d1;
+          z-index: 200;
+          position: relative;
+          text-align: left;
+          margin-top: 9.36%;
+        "
+      >
+        <h1 style="font-weight: 900 !important">
+          Di Mobil Bisa <br />
+          <span style="font-family: sans-serif" class="spanHeadline2"
+            >____</span
+          >
+        </h1>
+
+        <h1
+          style="
+            position: absolute;
+            top: -7%;
+            right: 5%;
+            font-weight: 900 !important;
+            font-family: Arial, Helvetica, sans-serif;
+          "
+        >
+          "
+        </h1>
+      </div>
+
+      <script>
+        var tulisanSK = document.querySelector(".spanHeadline");
+        var tulisanSK2 = document.querySelector(".spanHeadline2");
+        var a = 0;
+        var gambarWA1 = document.querySelector(".gambarWA1");
+        var gambarWA2 = document.querySelector(".gambarWA2");
+        var gambarWA3 = document.querySelector(".gambarWA3");
+        var gambarWA4 = document.querySelector(".gambarWA4");
+        var gambarWA5 = document.querySelector(".gambarWA5");
+
+        function gantiTeks() {
+          tulisanSK.style.opacity = 0;
+          tulisanSK2.style.opacity = 0;
+
+          if (a === 0) {
+            tulisanSK.innerHTML = "Jogjakarta";
+            tulisanSK2.innerHTML = "Isi Baterai Handphone";
+
+            gambarWA5.style.right = "55%";
+            gambarWA5.style.top = "35.5%";
+            gambarWA5.style.transform = "rotate(-90deg) scale(0.3)";
+
+            gambarWA4.style.right = "35%";
+            gambarWA4.style.top = "12.5%";
+            gambarWA4.style.transform = "rotate(8deg)";
+            gambarWA4.style.zIndex = "-40";
+
+            gambarWA3.style.right = "25%";
+            gambarWA3.style.top = "20.5%";
+            gambarWA3.style.transform = "rotate(15deg) scale(0.8)";
+            gambarWA3.style.zIndex = "-41";
+
+            gambarWA2.style.right = "19%";
+            gambarWA2.style.top = "25.5%";
+            gambarWA2.style.transform = "rotate(18deg) scale(0.6)";
+            gambarWA2.style.zIndex = "-42";
+
+            gambarWA1.style.right = "15%";
+            gambarWA1.style.top = "45.5%";
+            gambarWA1.style.transform = "rotate(18deg) scale(0.2)";
+          }
+          if (a === 1) {
+            tulisanSK.innerHTML = "Surabaya  ";
+            tulisanSK2.innerHTML = "Nonton Film Favorit";
+
+            gambarWA4.style.right = "55%";
+            gambarWA4.style.top = "35.5%";
+            gambarWA4.style.transform = "rotate(-90deg) scale(0.3)";
+
+            gambarWA3.style.right = "35%";
+            gambarWA3.style.top = "12.5%";
+            gambarWA3.style.transform = "rotate(8deg)";
+            gambarWA3.style.zIndex = "-40";
+
+            gambarWA2.style.right = "25%";
+            gambarWA2.style.top = "20.5%";
+            gambarWA2.style.transform = "rotate(15deg) scale(0.8)";
+            gambarWA2.style.zIndex = "-41";
+
+            gambarWA1.style.right = "19%";
+            gambarWA1.style.top = "25.5%";
+            gambarWA1.style.transform = "rotate(18deg) scale(0.6)";
+            gambarWA1.style.zIndex = "-42";
+
+            gambarWA5.style.right = "15%";
+            gambarWA5.style.top = "45.5%";
+            gambarWA5.style.transform = "rotate(18deg) scale(0.2)";
+          }
+          if (a === 2) {
+            tulisanSK.innerHTML = "Bandung   ";
+            tulisanSK2.innerHTML = "Karaokean";
+
+            gambarWA3.style.right = "55%";
+            gambarWA3.style.top = "35.5%";
+            gambarWA3.style.transform = "rotate(-90deg) scale(0.3)";
+
+            gambarWA2.style.right = "35%";
+            gambarWA2.style.top = "12.5%";
+            gambarWA2.style.transform = "rotate(8deg)";
+            gambarWA2.style.zIndex = "-40";
+
+            gambarWA1.style.right = "25%";
+            gambarWA1.style.top = "20.5%";
+            gambarWA1.style.transform = "rotate(15deg) scale(0.8)";
+            gambarWA1.style.zIndex = "-41";
+
+            gambarWA5.style.right = "19%";
+            gambarWA5.style.top = "25.5%";
+            gambarWA5.style.transform = "rotate(18deg) scale(0.6)";
+            gambarWA5.style.zIndex = "-42";
+
+            gambarWA4.style.right = "15%";
+            gambarWA4.style.top = "45.5%";
+            gambarWA4.style.transform = "rotate(18deg) scale(0.2)";
+          }
+          if (a === 3) {
+            tulisanSK.innerHTML = "Malang    ";
+            tulisanSK2.innerHTML = "Tidur Pules";
+
+            gambarWA2.style.right = "55%";
+            gambarWA2.style.top = "35.5%";
+            gambarWA2.style.transform = "rotate(-90deg) scale(0.3)";
+
+            gambarWA1.style.right = "35%";
+            gambarWA1.style.top = "12.5%";
+            gambarWA1.style.transform = "rotate(8deg)";
+            gambarWA1.style.zIndex = "-40";
+
+            gambarWA5.style.right = "25%";
+            gambarWA5.style.top = "20.5%";
+            gambarWA5.style.transform = "rotate(15deg) scale(0.8)";
+            gambarWA5.style.zIndex = "-41";
+
+            gambarWA4.style.right = "19%";
+            gambarWA4.style.top = "25.5%";
+            gambarWA4.style.transform = "rotate(18deg) scale(0.6)";
+            gambarWA4.style.zIndex = "-42";
+
+            gambarWA3.style.right = "15%";
+            gambarWA3.style.top = "45.5%";
+            gambarWA3.style.transform = "rotate(18deg) scale(0.2)";
+          }
+          if (a === 4) {
+            tulisanSK.innerHTML = "Lampung   ";
+            tulisanSK2.innerHTML = "Connect Bluetooth";
+
+            gambarWA1.style.right = "55%";
+            gambarWA1.style.top = "35.5%";
+            gambarWA1.style.transform = "rotate(-90deg) scale(0.3)";
+
+            gambarWA5.style.right = "35%";
+            gambarWA5.style.top = "12.5%";
+            gambarWA5.style.transform = "rotate(8deg)";
+            gambarWA5.style.zIndex = "-40";
+
+            gambarWA4.style.right = "25%";
+            gambarWA4.style.top = "20.5%";
+            gambarWA4.style.transform = "rotate(15deg) scale(0.8)";
+            gambarWA4.style.zIndex = "-41";
+
+            gambarWA3.style.right = "19%";
+            gambarWA3.style.top = "25.5%";
+            gambarWA3.style.transform = "rotate(18deg) scale(0.6)";
+            gambarWA3.style.zIndex = "-42";
+
+            gambarWA2.style.right = "15%";
+            gambarWA2.style.top = "45.5%";
+            gambarWA2.style.transform = "rotate(18deg) scale(0.2)";
+          }
+          a++;
+          if (a > 4) {
+            a = 0;
+          }
+
+          setTimeout(function () {
+            tulisanSK.style.opacity = 1;
+            tulisanSK2.style.opacity = 1;
+          }, 500); // Penyesuaian waktu delay sesuai kebutuhan
+        }
+
+        gantiTeks(0);
+
+        setInterval(gantiTeks, 3000);
+      </script>
+    </section>
+
+    <!-- ======================================== SECTION1 ================================================================================== -->
+    <!-- ======================================== SECTION1 ================================================================================== -->
+
+    <section
+      style="height: 80vh; position: relative; border-color: #c49a6c"
+      class="border rounded shadow-lg container row mt-3 mx-auto overflow-hidden carouselResolusiContainer p-lg-5 p-xl-2 d-flex align-items-center justify-content-center"
+    >
+      <div class="col-12 col-md-6 overflow-hidden carouselResolusi h-100">
+        <div
+          class="slideV animasiCarousel overflow-hidden"
+          style="height: 100%"
+        >
+          <img
+            src="img/Kamala Conkara/IMG-20230901-WA0011.jpg"
+            alt=""
+            class="img-fluid"
+            style="object-fit: contain; width: 100%; height: 100%"
+          />
+        </div>
+
+        <div
+          class="slideV1 animasiCarousel overflow-hidden"
+          style="height: 100%"
+        >
+          <img
+            src="img/Kamala Conkara/IMG-20230901-WA0017.jpg"
+            alt=""
+            class="img-fluid"
+            style="object-fit: contain; width: 100%; height: 100%"
+          />
+        </div>
+
+        <div class="slideV2 animasiCarousel" style="height: 100%">
+          <img
+            src="img/Kamala Conkara/IMG-20230901-WA0013.jpg"
+            alt=""
+            class="img-fluid"
+            style="object-fit: contain; width: 100%; height: 100%"
+          />
+        </div>
+        <div class="slideV3 animasiCarousel" style="height: 100%">
+          <img
+            src="img/Kamala Conkara/IMG-20230901-WA0009.jpg"
+            alt=""
+            class="img-fluid"
+            style="object-fit: contain; width: 100%; height: 100%"
+          />
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 overflow-hidden">
+        <div
+          class="containerH carouselResolusiTeks"
+          style="display: flex; width: 100%; height: 100%"
+        >
+          <div class="slideH animasiCarousel dalamCRS" style="height: 100%">
+            <div>
+              <h3>Rental Minibus Harga Terjangkau</h3>
+              <p style="text-align: justify">
+                Kamala Trip Menawarkan Penyewaan Minibus Terjangkau yang
+                Mewujudkan Petualangan Impian Anda. Rasakan Kenyamanan dan
+                Keamanan dalam Setiap Perjalanan, Dijamin Memuaskan dan Tak
+                Terlupakan.
+              </p>
+            </div>
+          </div>
+          <div class="slideH1 animasiCarousel dalamCRS" style="height: 100%">
+            <div>
+              <h3>Rental Minibus Pelayanan Maksimal</h3>
+              <p style="text-align: justify">
+                Layanan jam penjemputan tepat waktu, supir handal, hiburan
+                digital, dan stop kontak untuk kenyamanan perjalanan Anda yang
+                tak terlupakan.
+              </p>
+            </div>
+          </div>
+          <div class="slideH2 animasiCarousel dalamCRS" style="height: 100%">
+            <div>
+              <h3>Siap Menemani Seluruh Jawa Hingga Bandar Lampung</h3>
+              <p style="text-align: justify">
+                Menyusuri pesona Jawa hingga ke Bandar Lampung dengan kenyamanan
+                dan keseruan yang tak terlupakan. Nikmati perjalanan yang luar
+                biasa bersama kami.
+              </p>
+            </div>
+          </div>
+          <div class="slideH3 animasiCarousel dalamCRS" style="height: 100%">
+            <div>
+              <h3>Rencanakan Kegiatan Anda</h3>
+              <p style="text-align: justify">
+                Rencanakan perjalanan kantor, keluarga, sekolah, atau bersama
+                teman-teman dengan Kamala. Kami memberikan layanan transportasi
+                terpercaya untuk semua, menghadirkan pengalaman tak terlupakan
+                di setiap perjalanan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-12 row d-lg-none mx-auto nextButton"
+        style="bottom: 0%; transform: scale(0.7)"
+      >
+        <!-- <span class="col-3 col-lg-1 mx-auto " onclick="previousSlide()"> <img class="img-fluid" style="transform: rotate(180deg);" src="img/next-long-arrow-right-svgrepo-com.svg" alt=""> </span> -->
+        <span class="col-3 col-lg-1 mx-auto" onclick="nextSlide()">
+          <img class="img-fluid" src="img/_181669.png" alt="" />
+        </span>
+      </div>
+
+      <!-- <span class="d-none d-lg-flex col-3 mx-auto  " style="position: absolute; bottom: 5%; right: 40%; width: 7% !important; cursor: pointer;" onclick="previousSlide()"> <img class="img-fluid" style="transform: rotate(180deg); height: 5%;" src="img/next-long-arrow-right-svgrepo-com.svg" alt=""> </span> -->
+      <span
+        class="d-none d-lg-flex col-3 mx-auto"
+        style="
+          position: absolute;
+          bottom: 5%;
+          right: 0%;
+          width: 5% !important;
+          cursor: pointer;
+        "
+        onclick="nextSlide()"
+      >
+        <img
+          class="img-fluid"
+          style="height: 5%"
+          src="img/_181669.png"
+          alt=""
+        />
+      </span>
+
+      <img
+        src="img/supergraph2.png"
+        style="
+          position: absolute;
+          height: auto;
+          width: 7%;
+          right: 3%;
+          top: 3%;
+          opacity: 65%;
+          z-index: -1;
+        "
+        alt=""
+        class="supergraphSection"
+      />
+
+      <script>
+        var slideHori = document.querySelector(".slideH");
+        var slideHori1 = document.querySelector(".slideH1");
+        var slideHori2 = document.querySelector(".slideH2");
+        var slideHori3 = document.querySelector(".slideH3");
+
+        var slideVert = document.querySelector(".slideV");
+        var slideVert1 = document.querySelector(".slideV1");
+        var slideVert2 = document.querySelector(".slideV2");
+        var slideVert3 = document.querySelector(".slideV3");
+
+        var currentIndex = 0;
+        var indexTerbaru = 0;
+
+        function lihatSlide(index) {
+          currentIndex = index * 100;
+
+          slideHori.style.transform = `translateX(-${currentIndex}%)`;
+          slideHori1.style.transform = `translateX(-${currentIndex}%)`;
+          slideHori2.style.transform = `translateX(-${currentIndex}%)`;
+          slideHori3.style.transform = `translateX(-${currentIndex}%)`;
+
+          slideVert.style.transform = `translateY(-${currentIndex}%)`;
+          slideVert1.style.transform = `translateY(-${currentIndex}%)`;
+          slideVert2.style.transform = `translateY(-${currentIndex}%)`;
+          slideVert3.style.transform = `translateY(-${currentIndex}%)`;
+        }
+
+        function nextSlide() {
+          indexTerbaru++;
+          if (indexTerbaru >= 4) {
+            indexTerbaru = 0;
+          }
+
+          lihatSlide(indexTerbaru);
+        }
+
+        function previousSlide() {
+          indexTerbaru--;
+
+          if (indexTerbaru < 0) {
+            indexTerbaru = 3;
+          }
+
+          lihatSlide(indexTerbaru);
+        }
+
+        console.log(indexTerbaru);
+        console.log(currentIndex);
+
+        var intervalId;
+
+        function startCarousel() {
+          intervalId = setInterval(nextSlide, 3000); // Ganti slide setiap 3 detik (3000 milidetik)
+        }
+
+        function stopCarousel() {
+          clearInterval(intervalId);
+        }
+
+        startCarousel(); // Mulai carousel secara otomatis saat halaman dimuat
+
+        // Event listener untuk menghentikan autoplay saat mouse hover
+        var carouselContainer = document.querySelector(
+          ".carouselResolusiContainer"
+        ); // Ganti dengan selector yang sesuai
+        carouselContainer.addEventListener("mouseenter", stopCarousel);
+        carouselContainer.addEventListener("mouseleave", startCarousel);
+      </script>
+    </section>
+
+    <!-- ======================================== SECTION5  ================================================================================== -->
+    <!-- ======================================== SECTION5  ================================================================================== -->
+
+    <section
+      class="container row border mx-auto mt-3 rounded shadow-lg p-4 p-lg-5 d-flex align-items-center justify-content-center"
+      style="height: fit-content !important"
+    >
+      <div class="col-12 col-lg-6" style="height: 100% !important">
+        <h3 class="col-12">Sewa Minibus Jakarta</h3>
+        <p class="col-12 mt-2" style="text-align: justify">
+          Selamat datang di Kamala Minibus, mitra terpercaya Anda dalam
+          perjalanan yang nyaman dan tepat waktu di seluruh Jawa hingga Bandar
+          Lampung. Kami menghadirkan pengalaman sewa minibus dengan supir yang
+          tak tertandingi, menawarkan kenyamanan, keamanan, dan fleksibilitas
+          untuk semua jenis perjalanan, mulai dari perjalanan bisnis kantor
+          hingga petualangan bersama teman dan keluarga. Dengan layanan 24/7,
+          penjemputan tepat waktu, dan jangkauan wilayah luas, Kamala Minibus
+          siap memenuhi kebutuhan perjalanan Anda. Jadwalkan perjalanan Anda
+          bersama Kamala Minibus hari ini untuk pengalaman perjalanan yang tanpa
+          khawatir dan memuaskan.
+        </p>
+      </div>
+
+      <div
+        class="col-12 col-lg-6"
+        style="height: 100% !important ; display: flex"
+      >
+        <video
+          src="img/Toyota Hiace Commuter 3.0 Diesel Manual Transmisi 2023 _ Eksterior - Interior _ Toyota Medan_Trim1.mp4"
+          autoplay
+          loop
+          muted
+          class="col-12 my-auto mx-auto"
+        ></video>
+      </div>
+    </section>
+
+    <!-- ======================================== SECTION7  ================================================================================== -->
+    <!-- ======================================== SECTION7  ================================================================================== -->
+    <section
+      class="container mt-3 mx-auto border rounded shadow-lg row"
+      style="height: fit-content"
+    >
+      <div class="col-12 col-md-5 my-auto mx-auto">
+        <h1
+          style="
+            font-weight: 900;
+            letter-spacing: 2px !important;
+            color: #c49a6c;
+            text-shadow: 0px 0px rgba(0, 0, 0, 0.5) !important;
+          "
+        >
+          KAMALA
+        </h1>
+        <h2 style="text-shadow: 0px 0px rgba(0, 0, 0, 0.5) !important">
+          Hiace Commuter 14Seat
+        </h2>
+        <img
+          src="img/imgbin_toyota-hiace-bus-car-van-png.png"
+          class="img-fluid"
+          alt=""
+        />
+
+        </div>
+      </div>
+      <div class="col-12 mt-md-0 mt-3 col-md-5 mx-auto p-md-4 row">
+        <div class="col-6 h-25 mx-auto" style="position: relative">
+          <img
+            src="img/Section3/tv.jpg"
+            style="
+              height: 100%;
+              width: 100%;
+              object-fit: cover !important;
+              border: solid 2px #c49a6c;
+            "
+            class="img-fluid rounded shadow-lg"
+            alt=""
+          />
+        </div>
+        <!-- 2222 -->
+        <div class="col-6 h-25 mx-auto" style="position: relative">
+          <img
+            src="img/Section3/footstep.jpg"
+            style="
+              height: 100%;
+              width: 100%;
+              object-fit: cover !important;
+              border: solid 2px #c49a6c;
+            "
+            class="img-fluid rounded shadow-lg"
+            alt=""
+          />
+        </div>
+        <!-- 3333 -->
+        <div class="col-6 h-25 mx-auto" style="position: relative">
+          <img
+            src="img/Section3/kursihiace.jpg"
+            style="
+              height: 100%;
+              width: 100%;
+              object-fit: cover !important;
+              border: solid 2px #c49a6c;
+            "
+            class="img-fluid rounded shadow-lg"
+            alt=""
+          />
+        </div>
+        <!-- 4444 -->
+        <div class="col-6 h-25 mx-auto" style="position: relative">
+          <img
+            src="img/Section3/kursihiace2.jpeg"
+            style="
+              height: 100%;
+              width: 100%;
+              object-fit: cover !important;
+              border: solid 2px #c49a6c;
+            "
+            class="img-fluid rounded shadow-lg"
+            alt=""
+          />
+        </div>
+        <!-- 5555 -->
+        <div class="col-6 h-25 mx-auto" style="position: relative">
+          <img
+            src="img/Section3/kursihiace3.webp"
+            style="
+              height: 100%;
+              width: 100%;
+              object-fit: cover !important;
+              border: solid 2px #c49a6c;
+            "
+            class="img-fluid rounded shadow-lg"
+            alt=""
+          />
+        </div>
+        <!-- 6666 -->
+        <div class="col-6 h-25 mx-auto" style="position: relative">
+          <img
+            src="img/Section3/kursihiace4.webp"
+            style="
+              height: 100%;
+              width: 100%;
+              object-fit: cover !important;
+              border: solid 2px #c49a6c;
+            "
+            class="img-fluid rounded shadow-lg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================== SECTION3 ================================================================================== -->
+    <!-- ======================================== SECTION3 ================================================================================== -->
+    <section
+      class="container mt-3 p-4 border rounded shadow-lg"
+      style="height: fit-content !important"
+    >
+      <div class="row">
+        <div class="col-md-3 mx-auto">
+          <div class="testimonial">
+            <img
+              src="img/Gallery Trip/IMG-20230802-WA0006.jpg"
+              alt="Foto Testimonial 1"
+            />
+            <h3>Ibu Srie</h3>
+            <p class="testimonialTeks">
+              " Alhamdullilah KDKI senang menggunakan jasa Kamala Trip,
+              kendaraan bagus, sopir sopan dan nyetirnya mantap "
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 mx-auto">
+          <div class="testimonial">
+            <img
+              src="img/Gallery Trip/IMG-20230807-WA0006.jpg"
+              alt="Foto Testimonial 2"
+            />
+            <h3>Ibu Nunung</h3>
+            <p class="testimonialTeks">
+              " Rasanya seperti memakai mobil sendiri karena kenyamanan dan
+              keramahan pelayanan official dan drivernya. Selama perjalananpun
+              bisa tidur sejenak karena merasa aman dengan driver yang handal
+              dan tidak ngebut "
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 mx-auto">
+          <div class="testimonial">
+            <img
+              src="img/Gallery Trip/IMG-20230821-WA0007.jpg"
+              alt="Foto Testimonial 3"
+            />
+            <h3>Alvin</h3>
+            <p class="testimonialTeks">
+              " Kami senang dengan pelayanan Kamala. Dari jam penjemputan yang
+              tepat waktu hingga kehandalan supir yang dimiliki "
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================== SECTION4  ================================================================================== -->
+    <!-- ======================================== SECTION4  ================================================================================== -->
+
+    <section
+      style="height: 90vh !important; position: relative"
+      class="overflow-hidden container mx-auto row border rounded shadow-lg mt-3 d-flex justify-content-center align-items-center section3"
+    >
+      <div
+        class="container-fluid col-12 col-lg-8 mx-auto rounded fontWA"
+        style="z-index: 200; position: relative; text-align: center"
+      >
+        <h1
+          style="
+            font-weight: 900 !important;
+            text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+            color: #c49a6c;
+          "
+        >
+          Masih Ragu-Ragu<span style="font-family: sans-serif">?</span>
+          Hubungi Kami Di WhatsApp!
+        </h1>
+        <br />
+        <img
+          src="img/Lovepik_com-450132034-WhatsApp.png"
+          class="logoWA"
+          style="
+            height: auto;
+            width: 10%;
+            object-fit: cover;
+            z-index: 300;
+            cursor: pointer;
+          "
+          alt=""
+        />
+        <label for="logoWA"
+          ><h4
+            style="
+              font-weight: 900 !important;
+              text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+              color: #fcf9d1;
+            "
+          >
+            WhatsApp
+          </h4></label
+        >
+      </div>
+
+      <div
+        style="
+          position: absolute;
+          /* bottom: -100% !important; */
+          width: 100%;
+          height: 100%;
+        "
+        class="Pembungkusnya"
+      >
+        <div
+          style="position: relative; height: 100%; width: 100%"
+          class="section1nya"
+        >
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 5%;
+              left: 15%;
+              transform: rotate(15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/_DEE6247.JPG"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 25%;
+              left: 37%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw2"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/alam bdg.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              bottom: 15%;
+              left: 15%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/alam mlg.webp"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 5%;
+              left: 58%;
+              transform: rotate(30deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3 sw3a"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/tempat smg.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              bottom: 15%;
+              left: 58%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3a"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/Borobudur.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 25%;
+              right: 5%;
+              transform: rotate(15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw2"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/tempat sby.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- BREAK -->
+        <!-- BREAK -->
+
+        <div
+          style="position: relative; height: 100%; width: 100%"
+          class="section2nya"
+        >
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 5%;
+              left: 15%;
+              transform: rotate(15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/_DEE6247.JPG"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 25%;
+              left: 37%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw2"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/alam bdg.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              bottom: 15%;
+              left: 15%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/alam mlg.webp"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 5%;
+              left: 58%;
+              transform: rotate(30deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3 sw3a"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/tempat smg.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              bottom: 15%;
+              left: 58%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3a"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/Borobudur.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 25%;
+              right: 5%;
+              transform: rotate(15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw2"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/tempat sby.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+        </div>
+        <div
+          style="position: relative; height: 100%; width: 100%"
+          class="section2nya"
+        >
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 5%;
+              left: 15%;
+              transform: rotate(15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/_DEE6247.JPG"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 25%;
+              left: 37%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw2"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/alam bdg.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              bottom: 15%;
+              left: 15%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/alam mlg.webp"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 5%;
+              left: 58%;
+              transform: rotate(30deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3 sw3a"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/tempat smg.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              bottom: 15%;
+              left: 58%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3a"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/Borobudur.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 25%;
+              right: 5%;
+              transform: rotate(15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw2"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/tempat sby.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+        </div>
+        <div
+          style="position: relative; height: 100%; width: 100%"
+          class="section2nya"
+        >
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 5%;
+              left: 15%;
+              transform: rotate(15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/_DEE6247.JPG"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 25%;
+              left: 37%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw2"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/alam bdg.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              bottom: 15%;
+              left: 15%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/alam mlg.webp"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 5%;
+              left: 58%;
+              transform: rotate(30deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3 sw3a"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/tempat smg.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              bottom: 15%;
+              left: 58%;
+              transform: rotate(-15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw3a"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/Borobudur.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+          <!-- FOTO TERBANG -->
+          <div
+            style="
+              position: absolute;
+              height: 35%;
+              width: 15%;
+              background-color: white;
+              top: 25%;
+              right: 5%;
+              transform: rotate(15deg);
+            "
+            class="border rounded shadow-lg p-2 sectionWA sw2"
+            onmouseenter="hover()"
+            onmouseleave="leavehover()"
+          >
+            <img
+              src="img/tempat sby.jpg"
+              style="height: 80%; object-fit: cover"
+              class="img-fluid rounded"
+              alt=""
+            />
+          </div>
+        </div>
+        <script>
+          var fotoWA = document.querySelectorAll(".sectionWA");
+          var randomRotation;
+
+          function generateRandom() {
+            randomRotation = Math.floor(Math.random() * 101) - 50;
+            return randomRotation;
+          }
+
+          setInterval(generateRandom, 100);
+
+          function hover() {
+            var rotation = generateRandom();
+            this.style.transform = "rotate(" + rotation + "deg)";
+          }
+
+          function leavehover() {
+            var rotation = generateRandom();
+            this.style.transform = "rotate(" + rotation + "deg)";
+          }
+
+          for (var i = 0; i < fotoWA.length; i++) {
+            fotoWA[i].addEventListener("mouseenter", hover);
+            fotoWA[i].addEventListener("mouseleave", leavehover);
+          }
+
+          // CarouselNya
+          var pembungkusWA = document.querySelector(".Pembungkusnya");
+          var c = 0;
+
+          function updateTerbaru() {
+            if (c === 300) {
+              c = 0;
+            } else {
+              c++;
+            }
+            bergerak();
+            return c;
+          }
+
+          function bergerak() {
+            pembungkusWA.style.transform = "translateY(-" + c + "%)";
+          }
+
+          setInterval(updateTerbaru, 50);
+        </script>
+      </div>
+    </section>
+
+    <!-- ======================================== FOOTER ================================================================================== -->
+    <!-- ======================================== FOOTER ================================================================================== -->
+
+    <footer class="container-fluid  mx-auto row mt-3 p-3 " style="height: fit-content; min-height: 30vh; background-color: #fcf9d1;" >
+
+      <div class="col-12 row mt-3">
+
+        <div class="d-flex d-md-none col-12 col-md-4 row mx-auto my-auto mt-3 " >
+          <img src="img/Lovepik_com-450132034-WhatsApp.png" class="img-fluid col-4 my-auto mx-auto " style="object-fit: contain; height: 40px !important; "  alt="">
+          <img src="img/3721672_instagram_icon.svg" class="img-fluid col-4 my-auto mx-auto " style="object-fit: contain; height: 35px !important; " alt="">
+          <img src="img/Facebook-f_Logo-Grey-Logo.wine.svg" class="img-fluid col-4 my-auto mx-auto " style="object-fit: contain; height: 40px !important; " alt="">
+        </div>
+
+        <div class="col-12 col-md-4 row mx-auto my-auto"  >
+          <span style="text-align: center;" class="col-12"> <span style="font-family: Futura-Md-Bt !important;">Telp : </span> <br> +62 812-8876-7642</span>
+        </div>
+  
+        <div class="d-none d-md-flex col-12 col-md-4 row mx-auto my-auto mt-3 " >
+          <img src="img/Lovepik_com-450132034-WhatsApp.png" class="img-fluid col-4 my-auto mx-auto " style="object-fit: contain; height: 40px !important; "  alt="">
+          <img src="img/3721672_instagram_icon.svg" class="img-fluid col-4 my-auto mx-auto " style="object-fit: contain; height: 35px !important; " alt="">
+          <img src="img/Facebook-f_Logo-Grey-Logo.wine.svg" class="img-fluid col-4 my-auto mx-auto " style="object-fit: contain; height: 40px !important; " alt="">
+        </div>
+      </div>
+
+      
+    <div class="col-12 row mt-3 ">
+      <div class="col-12 col-md-4 row mx-auto my-auto"  >
+        <span style="text-align: center;" class="col-12"> <span style="font-family: Futura-Md-Bt !important;">Lokasi : </span> <br> Jl. Villa Bintaro Regensi Blok H1/9, Pondok Kacang Timur, Pondok Aren, Kota Tangerang Selatan, Banten, 15224.</span>
+      </div>
+
+      <span class="col-12 col-md-4 mx-auto my-auto mt-3 " style="text-align: center; font-size: 0.8rem !important;">
+        #SewaHiaceKamala #HiaceKamalaRental #HiaceKamalaTerbaik #SewaVanKamala #TransportasiKamalaHiace #SewaMobilHiaceKamala #HiaceKamalaMurah #PerjalananBisnisKamala #LiburanHiaceKamala #HiaceTransportasiKamala #SewaHiace24JamKamala #JasaSewaHiaceKamala
+      </span>
+    </div>
+    </footer>
+
+  </body>
+</html>
