@@ -97,8 +97,8 @@ input {
 
 .resolusiSection2 {
   @media (max-width: 767px) {
-    height: 25% !important;
-    width: 40% !important;
+    height: 160px !important;
+    width: 150px !important;
   }
 
   /* Media query untuk lebar antara 768px dan 1365px */
