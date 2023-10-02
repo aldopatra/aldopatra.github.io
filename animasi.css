@@ -97,10 +97,10 @@ input {
 
 .resolusiSection2 {
   @media (max-width: 767px) {
-    -webkit-width: 150px;
-    -webkit-height: 160px;
-    height: 160px !important;
-    width: 150px !important;
+    -webkit-width: 34%;
+    -webkit-height: 35%;
+    width: 34%;
+    height: 35%;
   }
 
   /* Media query untuk lebar antara 768px dan 1365px */
@@ -110,8 +110,8 @@ input {
   }
 
   @media screen and (min-width: 1350px) {
-    height: 25% !important;
-    width: 30% !important;
+    height: 35% !important;
+    width: 17% !important;
   }
 }
 
